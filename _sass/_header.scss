@@ -22,9 +22,9 @@
     }
     h1 {
       color: white;
-      font-size: ms(1);
+      font-size: ms(.9);
       @include media(640px) {
-        font-size: ms(.9);
+        font-size: ms(1);
       }
       text-align: left;
       margin: 0;
