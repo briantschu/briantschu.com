@@ -1,0 +1,112 @@
+footer {
+  p {
+    margin-top: 0;
+    font-size: ms(0);
+    font-weight: 300;
+  }
+
+  ///////////////////////////////////////////////////////////////////////////////////
+  ul {
+    margin: 0;
+    padding: 0;
+  }
+  li {
+    list-style: none;
+  }
+  a {
+    text-decoration: none;
+  }
+
+  //////////////////////////////////////////////////////////////////////////////////
+  background: $footer-background;
+  @include pad($base-spacing);
+  width: 100%;
+  .footer-logo {
+    margin-right: ms(1);
+    margin-bottom: ms(1);
+    @include media($medium-screen-up) {
+      float: left;
+      margin-bottom: 0;
+    }
+  }
+  .footer-logo img {
+    height: ms(6);
+  }
+  .footer-quote {
+    color: $footer-color;
+    font-family: $book-font-family;
+    @include media($small-screen-up) {
+      float: left;
+    }
+    @include media($medium-screen-up) {
+      max-width: 75%;
+    }
+    @include media($large-screen-up) {
+      max-width: 50%;
+    }
+    .attribution {
+      display: block;
+      padding-left: ms(2);
+    }
+  }
+  ul {
+    margin-bottom: ms(1);
+    @include media($large-screen-up) {
+      float: left;
+      margin-left: ms(1);
+      margin-bottom: 0;
+    }
+  }
+  ul li {
+    font-weight: 800;
+    padding-right: ms(1);
+    @include media($large-screen-up) {
+      display: inline;
+      text-align: left;
+    }
+  }
+  ul li a {
+    color: $footer-link-color;
+    &:focus,
+    &:hover {
+      color: $clr-blue-grey-100;
+    }
+  }
+  .footer-secondary-links {
+    @include media($large-screen-up) {
+      float: right;
+    }
+    ul.footer-social {
+      margin-top: ms(1);
+      @include media($small-screen-up) {
+        float: left;
+        clear: both;
+      }
+      @include media($large-screen-up) {
+        clear: none;
+        margin-top: 0;
+      }
+      li {
+        font-size: ms(1);
+        float: left;
+        line-height: 0;
+        padding-right: ms(1);
+        &:last-child {
+          padding-right: 0;
+        }
+      }
+      .fa-circle {
+        color: $footer-social-background-color;
+      }
+      img {
+        height: 1.6em;
+        opacity: 0.7;
+        padding: 1px;
+        &:focus,
+        &:hover {
+          opacity: 1;
+        }
+      }
+    }
+  }
+}

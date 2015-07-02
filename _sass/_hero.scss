@@ -1,0 +1,63 @@
+#herobg {
+  z-index:-100;
+  position:relative;
+  height:100vh;
+  min-height:420px;
+  background-color:#607D8B;
+  //margin-bottom:5em;
+}
+
+#hero {
+  height: 98vh;
+  min-height: 420px;
+  background-color: $header-background;
+  color: white;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 500;
+  @include display(flex);
+  @include align-items(center);
+  @include flex-wrap(wrap);
+  text-align: center;
+
+  h1 {
+    color: white;
+    @include media(500px) {
+      text-align: left;
+    }
+  }
+  h2 {
+    color: white;
+    font-family: $second-sans-serif;
+    font-weight: normal;
+  }
+}
+#circles {
+  .content {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    position: relative;
+    @include display(flex);
+    @include justify-content(space-around);
+    @include align-items(center);
+    #web,
+    #activist,
+    #digital {
+      position: relative;
+      top: 0;
+      @include display(flex);
+      @include justify-content(center);
+      width: 100%;
+    }
+    #activist {
+      z-index: 10;
+    }
+    svg.circle {
+      width: 85%;
+      height: 85%;
+    }
+  }
+}

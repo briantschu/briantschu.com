@@ -1,0 +1,162 @@
+---
+# Only the main Sass file needs front matter (the dashes are enough)
+---
+@charset "utf-8";
+
+@import
+  "bourbon/bourbon",
+  "base/base",
+  "neat/neat",
+  "header",
+  "footer",
+  "hero"
+;
+
+body {
+  @include media($small-screen-up) {
+    font-size: $small-base-font-size;
+  }
+  @include media($medium-screen-up) {
+    font-size: $medium-base-font-size;
+  }
+  @include media($large-screen-up) {
+    font-size: $base-font-size;
+  }
+}
+// p,
+// li {
+//   @include media($small-screen-up) {
+//     font-size: ms(1);
+//   }
+//   @include media($medium-screen-up) {
+//     font-size: ms(1);
+//   }
+// }
+div.wrapper {
+  @include outer-container;
+  @include pad($base-spacing);
+}
+section {
+  width: 100%;
+
+  div.content {
+    text-align: left;
+    padding-top: 3em;
+
+    ul {
+      @extend %default-ul;
+      margin-left: ms(2);
+      li {
+        padding-bottom: ms(-2);
+      }
+    }
+  }
+}
+#vision, #contact {
+  background-color: $clr-blue-grey-100;
+}
+
+p.lede {
+  font-size: ms(.25);
+  margin: 0 0 ms(1) 0;
+  font-weight: bold;
+}
+
+p.job-title {
+  font-size: ms(1);
+  margin: 0 0 ms(1) 0;
+  font-weight: bold;
+}
+
+
+#greeting {
+  .content {
+    .leading-image {
+      width: ms(10);
+
+      img {
+
+        width: 100%;
+
+      }
+    }
+  }
+}
+
+
+#experience {
+
+  .content {
+    div.flex:nth-child(4)
+    {
+      padding-top: 2em;
+    }
+    .flex {
+
+      padding-bottom: 4em;
+
+      .leading-image {
+        width: ms(2);
+        img {
+          max-width: 10em;
+        }
+      }
+
+
+    }
+
+  }
+}
+
+.flex {
+  @include display(flex);
+  @include justify-content(flex-start);
+  @include flex-wrap(wrap);
+
+  .flex > * {
+    @include flex(1 100%);
+  }
+
+  .leading-image {
+    @include flex(1 auto);
+
+    img {
+      width: 100%;
+      max-width: 100%;
+      padding-right: $base-spacing;
+      padding-bottom: $base-spacing;
+      display: block;
+      margin-left:auto;
+      margin-right: auto;
+    }
+  }
+
+  .text {
+    @include media(420px) {
+      @include flex(4 0px);
+    }
+
+    p:first-of-type {
+      margin-top:0;
+    }
+  }
+}
+
+.button-flex {
+  padding-top: 2em;
+  @include display(flex);
+  @include justify-content(center);
+  @include flex-wrap(wrap);
+
+  .button-flex > * {
+    @include flex(2 25%);
+  }
+
+  button {
+    cursor: default;
+  }
+
+  input {
+    margin-right: 2em;
+  }
+}
