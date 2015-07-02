@@ -157,6 +157,14 @@ p.job-title {
   }
 
   input {
-    margin-right: 2em;
+    margin: 0;
+    margin-top: 1em;
+    margin-bottom: 1em;
+
+    @include media($large-screen-up) {
+      margin:0;
+      margin-right: 2em;
+    }
+
   }
 }
