@@ -23,15 +23,15 @@ body {
     font-size: $base-font-size;
   }
 }
-// p,
-// li {
-//   @include media($small-screen-up) {
-//     font-size: ms(1);
-//   }
-//   @include media($medium-screen-up) {
-//     font-size: ms(1);
-//   }
-// }
+p,
+li {
+  @include media($small-screen-up) {
+    font-size: ms(.75);
+  }
+  @include media($medium-screen-up) {
+    font-size: ms(.75);
+  }
+}
 div.wrapper {
   @include outer-container;
   @include pad($base-spacing);
@@ -57,7 +57,7 @@ section {
 }
 
 p.lede {
-  font-size: ms(.25);
+  font-size: ms(1.1);
   margin: 0 0 ms(1) 0;
   font-weight: bold;
 }
@@ -123,11 +123,14 @@ p.job-title {
     img {
       width: 100%;
       max-width: 100%;
-      padding-right: $base-spacing;
-      padding-bottom: $base-spacing;
       display: block;
       margin-left:auto;
       margin-right: auto;
+      padding-bottom: $base-spacing;
+
+      @include media($medium-screen-up) {
+        padding-right: $base-spacing;
+      }
     }
   }
 
@@ -152,19 +155,7 @@ p.job-title {
     @include flex(2 25%);
   }
 
-  button {
-    cursor: default;
-  }
-
-  input {
-    margin: 0;
-    margin-top: 1em;
-    margin-bottom: 1em;
-
-    @include media($large-screen-up) {
-      margin:0;
-      margin-right: 2em;
-    }
-
+  .button {
+    margin: 1em;
   }
 }
