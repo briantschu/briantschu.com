@@ -9,7 +9,7 @@
   <!-- Schema.org markup for Google+ -->
   <meta itemprop="name" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}">
   <meta itemprop="description" content="{% if page.description %}{{ page.description | strip_html | strip_newlines | truncate: 155 }}{% else %}{{ site.description }}{% endif %}">
-  <meta itemprop="image" content="{{ site.url }}{{ page.sm_image }}">
+  <meta itemprop="image" content="{{ page.sm_image | prepend: site.url }}">
 
   <!-- Twitter Card data -->
   <meta name="twitter:card" content="summary_large_image">
@@ -17,8 +17,8 @@
 
   <!-- Open Graph data -->
   <meta property="og:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}" />
-  <meta property="og:url" content="{{ site.url }}{{ page.url }}" />
-  <meta property="og:image" content="{% if page.sm_image %}{{ site.url }}{{ page.sm_image }}{% else %}{{ site.url }}{{ site.sm_image }}{% endif %}" />
+  <meta property="og:url" content="{{ page.url | replace:'index.html','' | prepend: site.url }}" />
+  <meta property="og:image" content="{% if page.sm_image %}{{ page.sm_image| prepend: site.url }}{% else %}{{ site.sm_image | prepend: site.url }}{% endif %}" />
   <meta property="og:description" content="{% if page.description %}{{ page.description | strip_html | strip_newlines | truncate: 155 }}{% else %}{{ site.description }}{% endif %}" />
   <meta property="og:site_name" content="{{ site.title }}" />
 
@@ -34,5 +34,5 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.7.1/modernizr.min.js"></script>
 
   <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
-  <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}" />
+  <!--<link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ "/feed.xml" | prepend: site.url }}" />-->
 </head>
