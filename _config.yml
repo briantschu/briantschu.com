@@ -1,14 +1,12 @@
 # Site settings
 title: Brian Tofte-Schumacher
 email: hello@briantschu.com
-description: > # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
+description: ""
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: "https://briantschu.com" # the base hostname & protocol for your site
 twitter_username: briantschu
 github_username:  briantschu
+sm_image: /images/briantschu_sm.png
 
 # Build settings
 markdown: redcarpet

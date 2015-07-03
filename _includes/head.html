@@ -4,7 +4,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
-  <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+  <meta name="description" content="{% if page.description %}{{ page.description | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+
+  <!-- Schema.org markup for Google+ -->
+  <meta itemprop="name" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}">
+  <meta itemprop="description" content="{% if page.description %}{{ page.description | strip_html | strip_newlines | truncate: 155 }}{% else %}{{ site.description }}{% endif %}">
+  <meta itemprop="image" content="{{ site.url }}{{ page.sm_image }}">
+
+  <!-- Twitter Card data -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:creator" content="{% if page.author_twitter_handle %}@{{ page.author_twitter_username }}{% else %}@{{ site.twitter_username }}{% endif %}">
+
+  <!-- Open Graph data -->
+  <meta property="og:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}" />
+  <meta property="og:url" content="{{ site.url }}{{ page.url }}" />
+  <meta property="og:image" content="{% if page.sm_image %}{{ site.url }}{{ page.sm_image }}{% else %}{{ site.url }}{{ site.sm_image }}{% endif %}" />
+  <meta property="og:description" content="{% if page.description %}{{ page.description | strip_html | strip_newlines | truncate: 155 }}{% else %}{{ site.description }}{% endif %}" />
+  <meta property="og:site_name" content="{{ site.title }}" />
 
   <link rel="shortcut icon" href="images/favicon.png">
   <link rel="apple-touch-icon" href="images/touch-icon.png">
