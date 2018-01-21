@@ -11,6 +11,6 @@ sm_image: /images/briantschu_sm.png
 # Build settings
 markdown: redcarpet
 
-# Gems
-gems:
+# Plugins:
+plugins:
 - jekyll-compass
