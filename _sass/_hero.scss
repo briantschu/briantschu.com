@@ -5,6 +5,9 @@
   min-height:420px;
   background-color:#607D8B;
   //margin-bottom:5em;
+  @media (min-width: 1280px) {
+    min-height: 698px;
+  }
 }
 
 #hero {
@@ -21,6 +24,10 @@
   @include align-items(center);
   @include flex-wrap(wrap);
   text-align: center;
+
+  @media (min-width: 1280px) {
+    min-height: 684px;
+  }
 
   h1 {
     color: white;
